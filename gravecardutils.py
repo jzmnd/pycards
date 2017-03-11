@@ -18,7 +18,7 @@ __version__ = "1.0"
 def passtest(hand, target, statsuit='c'):
     p = False
     for c in hand:
-        if c.rank is 'j':
+        if c.joker():
             continue
         if c.ranknum <= target:
             p = True
@@ -32,7 +32,7 @@ def passtest(hand, target, statsuit='c'):
 def facecardbonus(hand):
     bonus = 0
     for c in hand:
-        if c.ranknum > 10:
+        if c.face():
             b = c.ranknum - 10
             if b > bonus:
                 bonus = b
@@ -42,6 +42,6 @@ def facecardbonus(hand):
 def jokercheck(hand):
     j = False
     for c in hand:
-        if c.rank is 'j':
+        if c.joker():
             j = True
     return j

@@ -80,6 +80,13 @@ class Deck():
             clist.append(c)
         return clist
 
+    def replace(self, pos):
+        if len(self.discardList) == 0:
+            return
+        c = self.discardList.pop()
+        self.drawList.insert(pos, c)
+        return
+
     def cut(self):
         return random.choice(self.drawList)
 
