@@ -15,15 +15,15 @@ __author__ = "Jeremy Smith"
 __version__ = "1.0"
 
 
-def passtest(hand, target, statsuit='c'):
+def passtest(hand, target, statsuit='c', mod=0):
     p = False
     for c in hand:
         if c.joker():
             continue
-        if c.ranknum <= target:
+        if c.ranknum <= target + mod:
             p = True
             continue
-        if c.suit is statsuit and c.ranknum <= target + 1:
+        if c.suit is statsuit and c.ranknum <= target + mod + 1:
             p = True
             continue
     return p
