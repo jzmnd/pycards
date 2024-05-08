@@ -6,16 +6,11 @@ Created by Jeremy Smith on 2017-03-10
 j.smith.03@cantab.net
 """
 
-import os
-import sys
-import random
-from pycards import *
-
 __author__ = "Jeremy Smith"
 __version__ = "1.0"
 
 
-def passtest(hand, target, statsuit='c', mod=0):
+def passtest(hand, target, statsuit="c", mod=0):
     p = False
     for c in hand:
         if c.joker():
